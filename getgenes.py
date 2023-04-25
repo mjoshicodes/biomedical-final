@@ -24,12 +24,6 @@ for record in vcf_reader:
             genes_snp[gene.gene_name] += 1
         else:
             genes_snp[gene.gene_name] = 1
-        # print(gene.gene_name)
-
-    # if len(genes) == 0:
-    #     print("NONE")
-# sorted_genes_snp = sorted(genes_snp.items(), key=lambda x:x[1])
-# print(sorted_genes_snp)
 
 with open('gene_count.csv', 'w') as f:
     for key in genes_snp.keys():
