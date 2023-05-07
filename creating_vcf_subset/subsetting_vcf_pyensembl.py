@@ -4,7 +4,7 @@ import pyensembl
 # Load Ensembl database for the human genome (GRCh38)
 ensembl = pyensembl.EnsemblRelease(release=100)
 
-IDENTIIED_GENES = {"UMODL1", "KRTAP12-2", "KRTAP10-10", "PCNT", "KRTAP10-7", "LCA5L", "COL18A1", "IFNAR2", "KRTAP10-1", "KRTAP10-3"}
+IDENTIIED_GENES_PYENSEMBL = {"RUNX1", "DSCAM", "MIR99AHG", "NCAM2", "KCNJ6", "GRIK1", "BACH1", "TIAM1", "AJ009632.2", "AF165147.1"}
 
 def check_if_in_genes(record):
     chromosome = '21'
@@ -15,7 +15,7 @@ def check_if_in_genes(record):
 
     # Print the gene names
     for gene in genes:
-        if gene.gene_name in IDENTIIED_GENES:
+        if gene.gene_name in IDENTIIED_GENES_PYENSEMBL:
             return gene.gene_name
     
 def create_gene_vcf(input_vcf, output_vcf):
@@ -63,7 +63,7 @@ def create_gene_vcf(input_vcf, output_vcf):
     print(f"New VCF file created. Output saved to '{output_vcf}'.")
 
 # Usage example
-create_gene_vcf('template.vcf', 'output.vcf')
+create_gene_vcf('template.vcf', 'gene_variants_chr21.vcf')
 
 
 
