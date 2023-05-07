@@ -1,0 +1,10 @@
+For this project, we aimed to find genes within Chromosome 21 of Carl Zimmer’s genome that carry the highest mutational burden. While mutational burden is a commonality and often has little to no clinical significance, there have been a variety of studies that show high mutational burdens in certain genes can be linked to chronic diseases such as cancer. We began by examining the overall highest mutational burden per gene using softwares and packages such as PyEnsembl and PyVCF. However, during our analysis of these results we noted that many of these SNPs were in intronic regions of the genome, and thus, have no effect on the final protein product. To gain a more accurate understanding of genes that carry pertinent mutational burdens, we utilized the ANNOVAR software to identify if SNPs were in coding or non-coding regions and only counted those that were expressed in the final protein and gave rise to non-synonymous mutations (those that changed the amino acids). The top 10 genes presented here are a result of this analysis.
+section 2, group 3
+chr21
+UMODL1, KRTAP12-2, KRTAP10-10, PCNT, KRTAP10-7, LCA5L, COL18A1, IFNAR2, KRTAP10-1, KRTAP10-3
+chr21:34614250:T:C, chr21:34614255:T:G, chr21:34634878:G:A, chr21:40778182:C:T, chr21:40785847:C:G, chr21:40785851:A:G, chr21:40800371:C:T, chr21:43531008:T:C, chr21:43531403:C:G, chr21:43531553:A:C, chr21:43531632:T:C, chr21:43531808:A:C, chr21:43539293:G:A, chr21:43547873:G:A, chr21:45959312:C:T, chr21:45959733:C:T, chr21:45959918:G:A, chr21:45978090:C:T, chr21:45978499:T:G, chr21:45978592:T:C, chr21:46020867:A:G, chr21:46021179:C:A, chr21:46021390:G:C, chr21:46021494:A:G, chr21:46057393:T:A, chr21:46057548:A:C, chr21:46057711:G:C, chr21:46057720:A:C, chr21:46057806:G:A, chr21:46086377:A:G, chr21:46086407:C:T, chr21:46086457:G:A, chr21:46086719:A:G, chr21:46086757:G:A, chr21:46086758:C:T, chr21:46876306:G:A, chr21:46876580:C:T, chr21:46910210:G:A, chr21:47777063:G:A, chr21:47787002:T:C, chr21:47836653:C:T, chr21:47850484:G:C, chr21:47851753:A:G
+
+
+
+
+
