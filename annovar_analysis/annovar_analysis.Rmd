@@ -1,0 +1,39 @@
+---
+title: "Final_Annovar"
+output: html_document
+---
+
+```{r}
+x <- read.csv("/Users/jaiveersingh/Downloads/annovar_table.csv")
+head(x)
+```
+
+```{r}
+non_synonymous <- x[(x$ExonicFunc.refGene == "nonsynonymous SNV"), ]
+```
+
+```{r}
+#ANNOVAR 
+
+library(ggplot2)
+library(dplyr)
+
+non_synonymous_df <- as.data.frame(sort(table(non_synonymous$Gene.refGene), decreasing = T))
+top_genes <- non_synonymous_df[1:10, ]
+
+top_genes %>%
+  arrange(Freq) %>%   
+  mutate(name=factor(Var1, levels=Var1)) %>%
+  ggplot(aes(x=Var1, y=Freq)) +
+    geom_segment(aes(xend=name, yend=0)) +
+    geom_point(size=4, color="orange") +
+    geom_text(aes(label=Freq), hjust=-1) +
+    coord_flip() +
+    theme_bw() +
+    ylab("Number of Non-synonymous Mutations") +
+    xlab("Top Genes") + 
+    expand_limits(y = 10) + 
+    ggtitle("Top 10 Genes With the Most Non-synonymous Mutations") + 
+    scale_x_discrete(limits = rev(genes))
+```
+
